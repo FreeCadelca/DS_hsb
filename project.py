@@ -1,6 +1,5 @@
 # https://docs.google.com/document/d/17a19MP2KLCXvx66KW5Kql-1pFEA1DLNXL_BkULePQH0/edit?usp=sharing
 import sys
-
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -85,7 +84,6 @@ numeric_columns = ['Score', 'Popularity', 'Rank', 'Members', 'Episodes']
 for column in numeric_columns:
     if df[column].isnull().sum() != 0:
         df[column].fillna(df[column].median(), inplace=True)
-
 # For categorical columns, we can fill missing values with the mode.
 categorical_columns = ['Description', 'Synonyms', 'Japanese', 'English', 'Type', 'Status', 'Aired', 'Premiered',
                        'Broadcast', 'Producers', 'Licensors', 'Studios', 'Source', 'Genres', 'Demographic', 'Duration',
