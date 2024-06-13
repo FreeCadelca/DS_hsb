@@ -1,4 +1,6 @@
 # https://docs.google.com/document/d/17a19MP2KLCXvx66KW5Kql-1pFEA1DLNXL_BkULePQH0/edit?usp=sharing
+# https://www.kaggle.com/datasets/atefehmirnaseri/cell-phone-price?select=CellPhone_train.csv
+
 import sys
 import pandas as pd
 import numpy as np
@@ -10,31 +12,31 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
 from sklearn.preprocessing import StandardScaler
 
+# todo: вот тут дописать описание
 """
-This dataset offers a comprehensive overview of the top anime's of 2024, and is useful for building recommendation systems, visualizing trends in anime popularity and score, predicting scores and popularity, and such. 
-Description of the columns:
-Score - The rating or score assigned to each anime title
-Popularity - Measure of how popular each anime is among viewers
-Rank - Ranking of each anime title within the dataset
-Members - The number of members or viewers associated with each anime
-Description - A brief overview or summary of the plot and themes of each anime
-Synonyms - Alternative titles or synonyms used for each anime
-Japanese - Original title of the anime in Japanese
-English - English-translated title of the anime
-Type - Classification of anime type (e.g., TV series, movie, OVA, etc.)
-Episodes - Total number of episodes in each anime series
-Status - Current status of the anime (e.g., ongoing, completed, etc.)
-Aired - Date range of when the anime was aired
-Premiered - Date when the anime premiered for the first time
-Broadcast - Information about the broadcasting platform or channel
-Producers - Companies or studios involved in producing the anime
-Licensors - Organizations or companies holding the licensing rights for the anime
-Studios - Animation studios responsible for producing the anime
-Source - Original source material for the anime (e.g., manga, novel, original)
-Genres - Categories or genres that the anime belongs to
-Demographic - Target demographic audience for the anime (e.g., shounen, shoujo, seinen, josei)
-Duration - Duration of each episode or movie
-Rating - Content rating assigned to each anime (e.g., G, PG, PG-13, R)
+
+
+battery_power: Общий заряд батареи, который можно сохранить (мАч)
+blue: устройство оснащено функцией blutooth или нет, да/нет (1/0)
+clock_speed: скорость выполнения инструкций микропроцессором
+dual_sim: устройство имеет две SIM-карты одновременно или нет
+fc: качество изображения фронтальной камеры в мегапикселях
+four_g: устройство имеет сеть 4G или нет
+int_memory: объем встроенной памяти в гигабайтах
+m_dep: глубина устройства в сантиметрах
+mobile_wt: вес устройства
+n_cores: количество процессорных ядер
+pc: качество основной камеры в мегапикселях
+px_height: высота разрешения в пикселях, 
+px_width: ширина разрешения в пикселях
+ram: оперативная память в мегабайтах
+sc_h: высота экрана устройства в сантиметрах
+sc_w: ширина экрана устройства в сантиметрах
+talk_time: максимальное время разговора, которое может поддерживать полностью заряженный аккумулятор устройства
+three_g: устройство имеет Сеть 3G или нет
+touch_screen: устройство имеет сенсорный экран или нет
+wifi: устройство имеет Wi-Fi или нет
+price_range: цена устройства по категориям
 """
 
 
@@ -158,7 +160,7 @@ plt.show()
 # Scatter plot of Score vs Popularity
 plt.figure(figsize=(10, 5))
 # Add a regression line
-sns.regplot(data=df, x='Score', y='Popularity', scatter_kws={'alpha':0.5})
+sns.regplot(data=df, x='Score', y='Popularity', scatter_kws={'alpha': 0.5})
 plt.title('Score vs Popularity')
 plt.xlabel('Score')
 plt.ylabel('Popularity')
